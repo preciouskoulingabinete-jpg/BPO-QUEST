@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — BPO QUEST</title>
+  <link rel="preload" href="fonts/MightySouly-lxggD.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/PaintMarker.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="auth.js"></script>
+</head>
+<body>
+  <header class="site-header auth-header">
+    <a class="site-brand" href="login.html" aria-label="BPO QUEST sign-in">
+      <img src="Logo.png" alt="BPO QUEST logo">
+    </a>
+  </header>
+
+  <audio id="background-music" src="audio/coffee-time.mp3" loop preload="auto"></audio>
+
+  <main class="page-shell auth-shell">
+    <section class="page-card auth-card">
+      <div id="loginPage">
+        <h1>Welcome Back!</h1>
+        <p>Sign in to play BPO QUEST: Customer Service Simulator.</p>
+        <p class="auth-demo-note">Demo accounts are saved in this browser. Please don't use a real password.</p>
+        <form id="loginForm">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" name="username" placeholder="Enter your username" autocomplete="username" required>
+
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+
+          <button type="submit">Sign In</button>
+        </form>
+        <p class="auth-switch">Don't have an account? <a href="#signup" id="showSignup">Create Account</a></p>
+      </div>
+
+      <div id="signupPage" hidden>
+        <h1>Create Account</h1>
+        <p>Join BPO QUEST and begin your customer-service journey.</p>
+        <form id="signupForm">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" autocomplete="name" required>
+
+          <label for="newUsername">Username</label>
+          <input type="text" id="newUsername" name="username" placeholder="Create a username" autocomplete="username" minlength="3" required>
+
+          <label for="newPassword">Password</label>
+          <input type="password" id="newPassword" name="password" placeholder="Create a password (8+ characters)" autocomplete="new-password" minlength="8" required>
+
+          <button type="submit">Create Account</button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="#login" id="showLogin">Sign In</a></p>
+      </div>
+
+      <p id="authMessage" class="auth-message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 BPO QUEST. All rights reserved.</p>
+  </footer>
+</body>
+</html>
